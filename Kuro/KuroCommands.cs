@@ -186,7 +186,7 @@ public sealed partial class ShellEngine
                 Config.Save();
                 return new ShellResult("Window title saved.", UiAction: ShellUiAction.RefreshTitle);
             case "reset":
-                Config.WindowTitle = "kuro";
+                Config.WindowTitle = "Kuro Updated";
                 Config.Save();
                 return new ShellResult("Window title reset.", UiAction: ShellUiAction.RefreshTitle);
             default:

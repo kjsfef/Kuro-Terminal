@@ -38,7 +38,7 @@ public sealed class ShellConfig
     public bool AutoUpdate { get; set; } = true;
     public string PromptFormat { get; set; } = "[{user}@{host} {path}]{symbol} ";
     public string Motd { get; set; } = "night mode engaged // type 'help' to explore Kuro";
-    public string WindowTitle { get; set; } = "kuro";
+    public string WindowTitle { get; set; } = "Kuro Updated";
 
     public Dictionary<string, string> Aliases { get; set; } =
         new(StringComparer.OrdinalIgnoreCase)

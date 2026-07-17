@@ -163,7 +163,7 @@
                                            Source="Assets/Kuro.png" />
                                 </Border>
                                 <TextBlock x:Name="TitleNameText"
-                                           Text="kuro"
+                                           Text="Kuro Updated"
                                            Margin="10,0,0,0"
                                            VerticalAlignment="Center"
                                            FontFamily="Segoe UI"
