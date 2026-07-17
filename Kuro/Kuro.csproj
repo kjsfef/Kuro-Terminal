@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject>Kuro.App</StartupObject>
+    <AssemblyName>Kuro</AssemblyName>
+    <RootNamespace>Kuro</RootNamespace>
+    <ApplicationIcon>Assets\Kuro.ico</ApplicationIcon>
+    <Version>1.1.1</Version>
+    <FileVersion>1.1.1.0</FileVersion>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <Authors>@Lthest</Authors>
+    <Company>@Lthest</Company>
+    <Product>Kuro Terminal</Product>
+    <Description>A customizable transparent command shell with integrated open-source utilities.</Description>
+    <Copyright>Copyright Â© 2026 @Lthest. All rights reserved.</Copyright>
+    <!-- GitHub Actions overrides this value automatically for release builds. -->
+    <KuroRepositoryUrl>https://github.com/kjsfef/Kuro-Terminal</KuroRepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Remove="App.xaml" />
+    <Page Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Velopack" Version="1.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyMetadata Include="KuroRepositoryUrl" Value="$(KuroRepositoryUrl)" />
+    <Resource Include="Assets\Kuro.ico" />
+    <Resource Include="Assets\Kuro.png" />
+  </ItemGroup>
+</Project>
