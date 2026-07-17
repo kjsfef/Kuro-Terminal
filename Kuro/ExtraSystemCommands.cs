@@ -14,6 +14,10 @@ public sealed partial class ShellEngine
 {
     private void RegisterExtraSystemCommands()
     {
+        RegisterMegaProductivityCommands();
+        RegisterMegaResearchCommands();
+        RegisterCommunityToolHubCommands();
+
         Register("now", "System+", "now", "Show local and UTC date/time together.", NowCommand, "datetime");
         Register("calendar", "System+", "calendar [month] [year]", "Draw a monthly calendar.", CalendarCommand, "cal");
         Register("week", "System+", "week", "Show the current ISO week number.", WeekCommand);

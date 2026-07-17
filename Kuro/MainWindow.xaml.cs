@@ -96,7 +96,7 @@ public partial class MainWindow : Window
     private void PrintWelcome()
     {
         Paragraph heading = NewParagraph();
-        heading.Inlines.Add(new Run("◉")
+        heading.Inlines.Add(new Run("â—‰")
         {
             Foreground = _purple,
             FontWeight = FontWeights.Bold,
@@ -118,7 +118,7 @@ public partial class MainWindow : Window
         if (!string.IsNullOrWhiteSpace(_shell.Config.Motd))
         {
             Paragraph motd = NewParagraph();
-            motd.Inlines.Add(new Run("◈ ") { Foreground = _green });
+            motd.Inlines.Add(new Run("â—ˆ ") { Foreground = _green });
             motd.Inlines.Add(new Run(_shell.Config.Motd) { Foreground = _text });
             TerminalBox.Document.Blocks.Add(motd);
         }
@@ -517,15 +517,21 @@ public partial class MainWindow : Window
     private void Window_OnStateChanged(object? sender, EventArgs e)
     {
         bool maximized = WindowState == WindowState.Maximized;
-        ShadowFrame.Margin = maximized ? new Thickness(0) : new Thickness(20);
-        ShadowFrame.Opacity = maximized ? 0 : 1;
-        OuterFrame.Margin = maximized ? new Thickness(0) : new Thickness(18);
+        ShadowFrame.Visibility = Visibility.Collapsed;
+
+        OuterFrame.Margin = maximized ? new Thickness(0) : new Thickness(1);
         OuterFrame.CornerRadius = maximized ? new CornerRadius(0) : new CornerRadius(22);
         WindowFrame.Margin = maximized ? new Thickness(0) : new Thickness(1);
         WindowFrame.CornerRadius = maximized ? new CornerRadius(0) : new CornerRadius(21);
         InnerHighlight.CornerRadius = maximized ? new CornerRadius(0) : new CornerRadius(20);
         TitleBar.CornerRadius = maximized ? new CornerRadius(0) : new CornerRadius(20, 20, 0, 0);
-        MaximizeButton.Content = maximized ? "❐" : "□";
+        MaximizeGlyph.Visibility = maximized
+            ? Visibility.Collapsed
+            : Visibility.Visible;
+        RestoreGlyph.Visibility = maximized
+            ? Visibility.Visible
+            : Visibility.Collapsed;
+        MaximizeButton.ToolTip = maximized ? "Restore" : "Maximize";
     }
 
     private void RefreshWindowTitle()
@@ -536,7 +542,7 @@ public partial class MainWindow : Window
         TitleNameText.Text = title;
         Title = title.Equals("kuro", StringComparison.OrdinalIgnoreCase)
             ? "Kuro Terminal"
-            : $"{title} — Kuro Terminal";
+            : $"{title} â€” Kuro Terminal";
     }
 
     private static Brush BrushFromHex(string hex) =>
