@@ -154,7 +154,7 @@
                                            Source="Assets/Kuro.png" />
                                 </Border>
                                 <TextBlock x:Name="TitleNameText"
-                                           Text="Kuro Updated"
+                                           Text="Kuro"
                                            Margin="10,0,0,0"
                                            VerticalAlignment="Center"
                                            FontFamily="Segoe UI"
@@ -181,25 +181,25 @@
             VerticalAlignment="Center"
             Margin="0,0,4,0">
 
-    <Button Style="{StaticResource WindowButtonStyle}"
+                                <Button Style="{StaticResource WindowButtonStyle}"
             ToolTip="Minimize"
             Click="MinimizeButton_OnClick">
-        <Grid Width="13" Height="13">
-            <Path Data="M 1.5,7 H 11.5"
+                                    <Grid Width="13" Height="13">
+                                        <Path Data="M 1.5,7 H 11.5"
                   Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
                   StrokeThickness="1.35"
                   StrokeStartLineCap="Round"
                   StrokeEndLineCap="Round"
                   SnapsToDevicePixels="True" />
-        </Grid>
-    </Button>
+                                    </Grid>
+                                </Button>
 
-    <Button x:Name="MaximizeButton"
+                                <Button x:Name="MaximizeButton"
             Style="{StaticResource WindowButtonStyle}"
             ToolTip="Maximize"
             Click="MaximizeButton_OnClick">
-        <Grid Width="13" Height="13">
-            <Rectangle x:Name="MaximizeGlyph"
+                                    <Grid Width="13" Height="13">
+                                        <Rectangle x:Name="MaximizeGlyph"
                        Width="9"
                        Height="8"
                        HorizontalAlignment="Center"
@@ -211,7 +211,7 @@
                        StrokeThickness="1.2"
                        SnapsToDevicePixels="True" />
 
-            <Path x:Name="RestoreGlyph"
+                                        <Path x:Name="RestoreGlyph"
                   Visibility="Collapsed"
                   Data="M 3.5,1.5 H 10.5 V 8.5 H 8.5 M 1.5,3.5 H 8.5 V 10.5 H 1.5 Z"
                   Fill="Transparent"
@@ -219,26 +219,29 @@
                   StrokeThickness="1.15"
                   StrokeLineJoin="Round"
                   SnapsToDevicePixels="True" />
-        </Grid>
-    </Button>
+                                    </Grid>
+                                </Button>
 
-    <Button Style="{StaticResource CloseButtonStyle}"
+                                <Button Style="{StaticResource CloseButtonStyle}"
             ToolTip="Close"
             Click="CloseButton_OnClick">
-        <Grid Width="13" Height="13">
-            <Path Data="M 2,2 L 11,11 M 11,2 L 2,11"
+                                    <Grid Width="13" Height="13">
+                                        <Path Data="M 2,2 L 11,11 M 11,2 L 2,11"
                   Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
                   StrokeThickness="1.35"
                   StrokeStartLineCap="Round"
                   StrokeEndLineCap="Round"
                   SnapsToDevicePixels="True" />
-        </Grid>
-    </Button>
-</StackPanel>
+                                    </Grid>
+                                </Button>
+                            </StackPanel>
                         </Grid>
                     </Border>
 
                     <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
                         <Image Source="Assets/Kuro.png"
                                Width="360"
                                Height="360"
@@ -250,8 +253,8 @@
                                Stretch="Uniform" />
 
                         <Border x:Name="AccentRail"
-                                Width="1"
-                                Margin="0,24,0,24"
+                                Width="0"
+                                Margin="611,24,0,24"
                                 HorizontalAlignment="Left"
                                 CornerRadius="0.5" />
 
@@ -273,8 +276,8 @@
 
                         <Border x:Name="BottomGlow"
                                 Height="1"
-                                Margin="32,0,32,10"
-                                VerticalAlignment="Bottom"
+                                Margin="32,655,32,0"
+                                VerticalAlignment="Top"
                                 CornerRadius="0.5"
                                 Opacity="0.45"
                                 IsHitTestVisible="False" />
